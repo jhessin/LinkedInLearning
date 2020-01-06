@@ -1,5 +1,5 @@
 #!/bin/bash
-ls -l /etc | while
+ls -l /etc | head | while
      read a b c d
 do
      echo owner is $c
