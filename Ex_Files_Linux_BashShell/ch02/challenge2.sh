@@ -2,7 +2,7 @@
 cd /usr/bin
 for i in *
 do
-if [[ -f $i ]]
+if [[ -f $i ]] && [[ -r $i ]]
 then
      if
      strings $i | grep -q "unable to fork"
@@ -11,4 +11,3 @@ then
      fi
 fi
 done
-
