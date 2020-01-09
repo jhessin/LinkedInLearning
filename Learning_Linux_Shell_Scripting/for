@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+names=$@
+
+for name in $names
+do
+  echo "Hello $name"
+done
+
+echo End of For loop
+exit 0
