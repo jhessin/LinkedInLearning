@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+count=1
+
+while [[ $count -le $1 ]]
+do
+  echo Your count is $count
+  (( count++ ))
+done
+
+echo Loop finished

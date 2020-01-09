@@ -4,6 +4,11 @@ names=$@
 
 for name in $names
 do
+  if [ $name = "Tracy" ]
+  then
+    # break
+    continue
+  fi
   echo "Hello $name"
 done
 
