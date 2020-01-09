@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+GetFiles() {
+  files=`ls -1 | head -10`
+}
+
+ShowFiles() {
+  local counter=1
+  for file in $@
+  do
+    echo "File #$counter = $file"
+    ((counter++))
+  done
+}
+
+GetFiles
+ShowFiles $files
+exit 0
