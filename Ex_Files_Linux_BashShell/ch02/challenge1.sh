@@ -1,7 +1,8 @@
 #!/bin/bash
 function f {
     # typeset A
-    declare -i A
+    # declare -i A
+    local A
     A=1
     echo inside f, A = $A
 }
