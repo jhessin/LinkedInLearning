@@ -1,1 +1,2 @@
+#!/usr/bin/env -S - sed -f
 s/apple/banana/
