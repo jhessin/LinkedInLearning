@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 trap 'echo just got int; exit' INT
 trap "echo you cannot quit now" QUIT
 cd /
