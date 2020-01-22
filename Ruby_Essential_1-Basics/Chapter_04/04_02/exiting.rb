@@ -4,6 +4,7 @@ fruits = ['banana', 'apple', 'pear']
 
 fruits.each do |fruit|
   if fruit == 'apple'
+    # break
     # exit
     # exit!
     abort("Exit on apple")
