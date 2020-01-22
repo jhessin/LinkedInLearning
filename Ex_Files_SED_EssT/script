@@ -1,0 +1,53 @@
+#!/usr/bin/env -S sed -f
+
+s/again/again/
+t label
+s/the/THE/g
+:label
+s/up/UP/g
+
+# s/the/THE/g
+# b next
+# s/up/UP/g
+# : next
+# s/down/DOWN/g
+# b
+# s/marched/MARCHED/g
+
+# N
+# s/marched.*up/marched...up/
+# P
+# D
+
+# 3,6 {
+#   /when/ {
+#     s/up/UP/g
+#     s/down/DOWN/g
+#   }
+# }
+
+# /marched/ {
+#   n
+#   # =
+#   s/^/((/
+#   n
+#   # =
+#   s/$/))/
+#   # =
+#   q
+# }
+
+# /up/ {
+#   s/up/UP/
+#   d
+#   n
+#   s/^/==/
+# }
+
+# s/ /\t/3
+# l
+
+# /marched/ {
+#   N
+#   s/\n/ - /
+# }
