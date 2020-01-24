@@ -11,6 +11,7 @@ puts subtract(8,3)
 def subtract(n1, n2)
   result = n1 - n2
   result = 0 if result < 0
+  result
 end
 
 puts subtract(8,3)
@@ -20,10 +21,11 @@ def longest_word(words=[])
   longest = words.inject do |memo, word|
     memo.length > word.length ? memo : word
   end
-  puts longest
+  # puts longest
+  longest
 end
 
 fruits = ['apple','banana','pear','plum'] 
-# puts longest_word(fruits)
+puts longest_word(fruits)
 
-# puts "I ate a #{longest_word(fruits)}."
+puts "I ate a #{longest_word(fruits)}."
