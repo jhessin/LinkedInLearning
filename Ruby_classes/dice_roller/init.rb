@@ -34,7 +34,7 @@ ds = DiceSet.new(options)
 
 loop do
   puts 'Current dice: '
-  ds.display
+  puts ds.display
   prompt
   response = gets.chomp
 

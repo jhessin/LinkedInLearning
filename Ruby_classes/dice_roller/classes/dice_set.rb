@@ -12,8 +12,8 @@ class DiceSet
 
   def initialize(options = {})
     @dice = []
-    count = options[:count] || 2
     sides = options[:sides] || [8, 20]
+    count = options[:count] || sides.count
     count.times do |i|
       @dice[i] = Die.new(sides: sides[i])
     end
@@ -24,13 +24,6 @@ class DiceSet
   end
 
   def display
-    result = ''
-    first = true
-    @dice.each do |die|
-      result += ' - ' unless first
-      result += "[#{die.value}]"
-      first = false if first
-    end
-    puts result
+    @dice.map { |d| "[ #{d.value} ]" }.join(' - ')
   end
 end
