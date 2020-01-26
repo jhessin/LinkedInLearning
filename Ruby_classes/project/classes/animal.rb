@@ -4,7 +4,18 @@
 # Animal: a simple animal class
 class Animal
   class << self
-    attr_accessor :species, :current_animals
+    attr_reader :species, :current_animals
+    def species=(array)
+      return unless array.is_a?(Array)
+
+      @species = array
+    end
+
+    def current_animals=(array)
+      return unless array.is_a?(Array)
+
+      @current_animals = array
+    end
   end
 
   attr_accessor :noise, :color
