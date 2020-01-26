@@ -6,6 +6,7 @@ require_relative 'classes/animal.rb'
 require_relative 'classes/pig.rb'
 require_relative 'classes/cow.rb'
 require_relative 'classes/duck.rb'
+require_relative 'classes/amateur_chef.rb'
 
 person = Person.new
 person.first_name = 'Bob'
@@ -54,3 +55,13 @@ Animal.species = %w[cat mouse moose]
 Animal.species.each do |type|
   puts type
 end
+
+puts '------'
+
+chef = Chef.new
+chef.make_dinner
+
+puts '*'
+
+chef = AmateurChef.new
+chef.make_dinner
