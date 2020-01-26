@@ -3,6 +3,9 @@
 
 require_relative 'classes/person.rb'
 require_relative 'classes/animal.rb'
+require_relative 'classes/pig.rb'
+require_relative 'classes/cow.rb'
+require_relative 'classes/duck.rb'
 
 person = Person.new
 person.first_name = 'Bob'
@@ -13,20 +16,36 @@ puts person.initial_and_last_name
 # puts person.initial
 
 puts '------'
+
 pig = Animal.new(noise: 'Oink!')
 puts pig.noise
 
 puts '------'
+
 Animal.species.each do |type|
   puts type
 end
 
-wilbur = Animal.create_a_pig
+puts '------'
+
+wilbur = Pig.new
 puts wilbur.noise
+wilbur.eat
+
+maisie = Cow.new
+puts maisie.noise
+maisie.jump
+
+howard = Duck.new
+puts howard.noise
+howard.fly
 
 puts '------'
 
-puts Animal.total_animals
+puts "Animals: #{Animal.total_animals}"
+puts "Pigs: #{Pig.total_animals}"
+puts "Cows: #{Cow.total_animals}"
+puts "Ducks: #{Duck.total_animals}"
 
 puts '------'
 
