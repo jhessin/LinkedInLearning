@@ -1,25 +1,12 @@
 #!/bin/env ruby
 # frozen_string_literal: false
 
+require_relative '../modules/nameable.rb'
+
 # A basic Person class
 class Person
-  attr_accessor :first_name, :last_name
-
+  include Nameable
   def say_hello
     'Hello!'
-  end
-
-  def full_name
-    "#{first_name} #{last_name}"
-  end
-
-  def initial_and_last_name
-    "#{initial} #{last_name}"
-  end
-
-  private
-
-  def initial
-    @first_name.chars.first + '.'
   end
 end

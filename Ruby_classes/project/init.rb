@@ -1,12 +1,13 @@
 #!/bin/env ruby
 # frozen_string_literal: false
 
-require_relative 'classes/person.rb'
-require_relative 'classes/animal.rb'
-require_relative 'classes/pig.rb'
-require_relative 'classes/cow.rb'
-require_relative 'classes/duck.rb'
-require_relative 'classes/amateur_chef.rb'
+$LOAD_PATH << './classes' << './modules'
+require 'person.rb'
+require 'animal.rb'
+require 'pig.rb'
+require 'cow.rb'
+require 'duck.rb'
+require 'amateur_chef.rb'
 
 person = Person.new
 person.first_name = 'Bob'
