@@ -1,11 +1,13 @@
 #!/bin/env ruby
 # frozen_string_literal: false
 
+require_relative '../exceptions/volume_error.rb'
+
 # A basic radio class
 class Radio
   class << self
     attr_reader :fm_frequencies, :default_fm_freq, :am_frequencies,
-      :default_am_freq
+                :default_am_freq
   end
 
   attr_reader :volume, :freq, :band
@@ -40,7 +42,8 @@ class Radio
   end
 
   def volume=(value)
-    return if value < 0 || value > 10
+    raise VolumeError if value < VolumeError.min_vol || value >
+                                                        VolumeError.max_vol
 
     @volume = value
   end
