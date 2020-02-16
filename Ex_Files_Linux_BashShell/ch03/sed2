@@ -1,4 +1,0 @@
-#!/usr/bin/env -S - sed -f
-s/a/A/
-s/B/BBB/
-
