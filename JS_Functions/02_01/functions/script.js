@@ -10,4 +10,5 @@ var calc = {
   }
 }
 
+// called as method
 calc.plus(2,2);

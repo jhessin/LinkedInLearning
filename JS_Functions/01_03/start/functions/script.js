@@ -5,3 +5,6 @@ function plus(a,b) {
     console.log(arguments)
   )
 }
+
+// Traditional invocation
+plus(1, 2)
