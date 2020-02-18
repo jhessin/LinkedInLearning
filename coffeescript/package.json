@@ -1,0 +1,12 @@
+{
+  "name": "MyApp",
+  "version": "0.1.0",
+  "description": "Sample CoffeeScript application",
+  "main": "index.js",
+  "author": "Jim Hessin",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
