@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "vcoffee": "nvim components/scripts/script.js components/coffee/script.coffee",
     "start": "start gulp",
     "stop": "stop gulp",
     "attach": "ta gulp",

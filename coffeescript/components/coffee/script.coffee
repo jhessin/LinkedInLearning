@@ -1,2 +1,3 @@
-
-$('#content').append "#{name}" if name?
+# puts = console.log
+do fill = (item = 'Bob') ->
+  $('#content').append "#{item}"
