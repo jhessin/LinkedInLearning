@@ -6,6 +6,10 @@
   "author": "Jim Hessin",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "start-server ; start gulp",
+    "stop": "stop server ; stop gulp"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
