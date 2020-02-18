@@ -8,7 +8,8 @@
   "private": true,
   "scripts": {
     "start": "start-server ; start gulp",
-    "stop": "stop server ; stop gulp"
+    "stop": "stop server ; stop gulp",
+    "restart": "stop gulp ; start gulp"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

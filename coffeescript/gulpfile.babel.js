@@ -5,8 +5,8 @@ import concat from 'gulp-concat';
 import sass from 'gulp-sass';
 
 let jsSources = [
-  'components/scripts/scriptOne.js',
-  'components/scripts/scriptTwo.js'
+  'components/lib/jquery/jquery-3.4.1.js',
+  'components/scripts/*.js'
 ];
 
 let sassSources = [
