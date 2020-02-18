@@ -1,3 +1,5 @@
+name = 'Jim'
+
 do ->
   # add stuff
-  $('#content').append("Don't miss it!")
+  $('#content').append "--#{name}"

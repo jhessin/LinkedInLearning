@@ -1,4 +1,8 @@
+var name;
+
+name = 'Jim';
+
 (function() {
   // add stuff
-  return $('#content').append("Don't miss it!");
+  return $('#content').append(`--${name}`);
 })();
