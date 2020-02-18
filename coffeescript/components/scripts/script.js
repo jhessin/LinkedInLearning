@@ -1,8 +1,3 @@
-var name;
-
-name = 'Jim';
-
-(function() {
-  // add stuff
-  return $('#content').append(`--${name}`);
-})();
+if (typeof name !== "undefined" && name !== null) {
+  $('#content').append(`${name}`);
+}

@@ -7,8 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "start-server ; start gulp",
-    "stop": "stop server ; stop gulp",
+    "start": "start gulp",
+    "stop": "stop gulp",
+    "attach": "ta gulp",
     "restart": "stop gulp ; start gulp"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "browser-sync": "^2.26.7"
   }
 }

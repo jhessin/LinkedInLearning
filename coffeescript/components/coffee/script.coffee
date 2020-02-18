@@ -1,5 +1,2 @@
-name = 'Jim'
 
-do ->
-  # add stuff
-  $('#content').append "--#{name}"
+$('#content').append "#{name}" if name?
