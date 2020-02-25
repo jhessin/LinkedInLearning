@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+names=$@
+
+for name in $names
+do
+  if [ $name = "Tracy" ]
+  then
+    # break
+    continue
+  fi
+  echo "Hello $name"
+done
+
+echo End of For loop
+exit 0

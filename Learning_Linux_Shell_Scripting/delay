@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+delay=$1
+
+if [ -z $delay ]; then
+  echo "You must supply a delay"
+  exit 1
+fi
+
+echo "Going to take a nap for $delay seconds"
+sleep $delay
+echo "Ahh... what a nice nap"
+exit 0
