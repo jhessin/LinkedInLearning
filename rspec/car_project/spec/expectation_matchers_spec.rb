@@ -80,31 +80,30 @@ describe 'Expectation Matchers' do # rubocop: disable Metrics/BlockLength
   end
 
   describe 'collection matchers' do
-    
     it 'will match arrays' do
-     array = [1,2,3] 
+      array = [1, 2, 3]
 
-     expect(array).to include(3)
-     expect(array).to include(1,3)
+      expect(array).to include(3)
+      expect(array).to include(1, 3)
 
-     expect(array).to start_with(1)
-     expect(array).to end_with(3)
+      expect(array).to start_with(1)
+      expect(array).to end_with(3)
 
-     expect(array).to match_array([3,2,1])
-     expect(array).not_to match_array([1,2])
+      expect(array).to match_array([3, 2, 1])
+      expect(array).not_to match_array([1, 2])
 
-     expect(array).to contain_exactly(3,2,1)    # similar to match_array
-     expect(array).not_to contain_exactly(1,2)  # but use individual args
+      expect(array).to contain_exactly(3, 2, 1) # similar to match_array
+      expect(array).not_to contain_exactly(1, 2) # but use individual args
     end
 
     it 'will match strings' do
-     string = 'some string'
+      string = 'some string'
 
-     expect(string).to include('ring')
-     expect(string).to include('so', 'ring')
+      expect(string).to include('ring')
+      expect(string).to include('so', 'ring')
 
-     expect(string).to start_with('so')
-     expect(string).to end_with('ring')
+      expect(string).to start_with('so')
+      expect(string).to end_with('ring')
     end
 
     it 'will match hashes' do
@@ -118,11 +117,63 @@ describe 'Expectation Matchers' do # rubocop: disable Metrics/BlockLength
       expect(hash).to include(a: 1)
 
       expect(hash).to include(a: 1, c: 3)
-      expect(hash).to include({a: 1, c: 3})
+      expect(hash).to include({ a: 1, c: 3 })
 
       expect(hash).not_to include(
         'a' => 1, 'c' => 3
       )
+    end
+  end
+
+  describe 'other useful matchers' do
+    it 'will match strings with a regex' do
+      # This matcher is a good way to "spot check" strings
+      string = 'The order has been received.'
+      expect(string).to match(/order(.+)received/)
+
+      expect('123').to match(/\d{3}/)
+      expect(123).not_to match(/\d{3}/) # only works with strings
+
+      email = 'someone@somewhere.com'
+      expect(email).to match(/\A\w+@\w+\.\w{3}\Z/)
+    end
+
+    it 'will match object types' do
+      expect('test').to be_instance_of(String)
+      expect('test').to be_an_instance_of(String)   # alias of be_instance_of
+
+      expect('test').to be_kind_of(String)
+      expect('test').to be_a_kind_of(String)        # alias of be_kind_of
+      expect('test').to be_a(String)                # alias of be_kind_of
+      expect([1, 2, 3]).to be_an(Array)             # alias of be_kind_of
+    end
+
+    it 'will match objects with #respond_to' do
+      string = 'test'
+      expect(string).to respond_to(:length)
+      expect(string).not_to respond_to(:sort)
+    end
+
+    it 'will match class instances with #have_attributes' do
+      class Car
+        attr_accessor :make, :year, :color
+      end
+      car = Car.new
+      car.make = 'Dodge'
+      car.year = 2010
+      car.color = 'green'
+
+      expect(car).to have_attributes(color: 'green')
+      expect(car).to have_attributes(
+        make: 'Dodge', year: 2010, color: 'green'
+      )
+    end
+
+    it 'will match anything with #satisfy' do
+      # This is the most flexible matcher
+      expect(10).to satisfy do |value|
+        (value >= 5) && (value <= 10) && value.even?
+      end
     end
   end
 end
