@@ -1,21 +1,14 @@
 pub fn main() {
-    loop {
-        println!("Again!",);
-        break;
+    // {
+    let x = 1;
+    // }
+
+    // x is unaccessible here!
+    if x == 1 {
+        let a = 10;
+        println!("A = {}", a,);
     }
 
-    let mut number = 3;
-
-    while number > 0 {
-        println!("{}!", number);
-
-        // number = number - 1;
-        number -= 1;
-    }
-
-    let a = [1, 2, 3, 4, 5];
-
-    for element in a.iter() {
-        println!("Value is = {}", element);
-    }
+    // a is unaccessible here
+    // println!("A = {}", a,);
 }
