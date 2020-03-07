@@ -1,13 +1,22 @@
 pub fn main() {
-    let mut s = String::from("Hello");
+    let s = String::from("hello"); // s comes into scope
+    let mut s = s;
 
-    s.push_str(", world!");
+    takes_ownership(&mut s); // s's value moves to the function takes_ownership
 
     println!("{}", s);
+    let x = 5;
 
-    let s1 = String::from("hello");
-    let s2 = s1;
+    makes_copy(x);
 
-    // This doesn't work
-    // println!("{}, world!", s1);
+    println!("{}", x);
+}
+
+fn takes_ownership(some_string: &mut String) {
+    println!("{}", some_string);
+    some_string.push_str(", world!");
+}
+
+fn makes_copy(some_num: i32) {
+    println!("{}", some_num);
 }
