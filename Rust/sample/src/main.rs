@@ -1,14 +1,13 @@
 pub fn main() {
-    // {
-    let x = 1;
-    // }
+    let mut s = String::from("Hello");
 
-    // x is unaccessible here!
-    if x == 1 {
-        let a = 10;
-        println!("A = {}", a,);
-    }
+    s.push_str(", world!");
 
-    // a is unaccessible here
-    // println!("A = {}", a,);
+    println!("{}", s);
+
+    let s1 = String::from("hello");
+    let s2 = s1;
+
+    // This doesn't work
+    // println!("{}, world!", s1);
 }
