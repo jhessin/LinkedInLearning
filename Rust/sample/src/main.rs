@@ -1,12 +1,20 @@
 fn main() {
-    let tup: (i32, f64, u8) = (500, 3.5, 1);
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+    ];
 
-    let (x, y, z) = tup;
+    println!("First Month = {}", months[0]);
 
-    let a = tup.0;
-    let b = tup.1;
-
-    println!("x = {}, y = {}, z = {}", x, y, z);
-
-    println!("a = {}, b = {}", a, b);
+    // This doesn't compile
+    // println!("Fourteenth Month = {}", months[13]);
 }
