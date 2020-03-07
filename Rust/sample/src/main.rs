@@ -1,20 +1,7 @@
 fn main() {
-    let months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-    ];
+    another_function();
+}
 
-    println!("First Month = {}", months[0]);
-
-    // This doesn't compile
-    // println!("Fourteenth Month = {}", months[13]);
+fn another_function() {
+    println!("Another function.");
 }
