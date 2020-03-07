@@ -1,19 +1,21 @@
 pub fn main() {
-    let a = 6;
-
-    if a < 10 {
-        println!("Condition is true");
-    } else {
-        println!("Condition is false",);
+    loop {
+        println!("Again!",);
+        break;
     }
 
-    if a % 4 == 0 {
-        println!("A is divisible by 4",);
-    } else if a % 3 == 0 {
-        println!("A is divisible by 3",)
-    } else if a % 2 == 0 {
-        println!("A is divisible by 2",)
-    } else {
-        println!("A is not divisible by 4, 3, or 2",);
+    let mut number = 3;
+
+    while number > 0 {
+        println!("{}!", number);
+
+        // number = number - 1;
+        number -= 1;
+    }
+
+    let a = [1, 2, 3, 4, 5];
+
+    for element in a.iter() {
+        println!("Value is = {}", element);
     }
 }
