@@ -1,26 +1,19 @@
-fn main() {
-    another_function();
+pub fn main() {
+    let a = 6;
 
-    another_function2(5);
+    if a < 10 {
+        println!("Condition is true");
+    } else {
+        println!("Condition is false",);
+    }
 
-    let a = sum(10, 5);
-
-    println!("Sum = {}", a);
-}
-
-fn another_function() {
-    println!("Another function.");
-}
-
-fn another_function2(x: i32) {
-    println!("The value of x = {}", x);
-}
-
-fn sum(x: i32, y: i32) -> i32 {
-    let mut b = x + y;
-
-    b = b * 100;
-
-    b // Equivalent v
-      // return b;
+    if a % 4 == 0 {
+        println!("A is divisible by 4",);
+    } else if a % 3 == 0 {
+        println!("A is divisible by 3",)
+    } else if a % 2 == 0 {
+        println!("A is divisible by 2",)
+    } else {
+        println!("A is not divisible by 4, 3, or 2",);
+    }
 }
